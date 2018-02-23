@@ -1,0 +1,29 @@
+<div class="example-container">
+
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.open(); showMenu = false;" *ngIf="showMenu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-icon-button (click)="snav.close(); showMenu = true"  *ngIf="!showMenu">
+      <mat-icon>arrow_backward</mat-icon>
+    </button>
+    <h1 class="example-app-name">AstroSpeak</h1>
+    <span class="example-fill-remaining-space"></span>
+    <button mat-icon-button>
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container"
+  >
+    <mat-sidenav #snav>
+      <mat-nav-list>
+        <a mat-list-item routerLink="." *ngFor="let nav of navOptions">{{nav}}<mat-icon>arrow_forward</mat-icon></a>
+      </mat-nav-list>
+      <mat-card>
+        <div>Email : astrospeak@timesinternet.in</div>
+      </mat-card>
+      <p style="padding-left: 10px;">Follow us on: </p>
+    </mat-sidenav>
+  </mat-sidenav-container>
+</div>
